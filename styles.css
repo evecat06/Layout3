@@ -1,30 +1,52 @@
-body *{
+/* Common styles for body *, nav, header, footer */
+body *,
+nav,
+header,
+footer {
+    background-color: lemonchiffon;
     border: 4px solid #7f007f;
-    height: 100px;
+    height: auto; /* Change to auto height */
     margin: 10px;
     text-align: center;
     font-size: 2rem;
     font-family: 'Times New Roman', Times, serif;
 }
-nav{
-    height: 50px;
+
+footer,
+header {
+    height: 20vh;
 }
-main{
-    height: 100vh;
-    width: 100%;
+
+nav {
+    height: 10vh;
+}
+
+main {
+    background-color: white;
+    height: auto; /* Change to auto height */
+    width: 97%;
     border: none;
-    margin: 2px;
-    display: inline-block;
+    margin: 10px;
+    display: flex;
+    flex-wrap: wrap; /* Allow items to wrap */
 }
-aside{
-    float:left;
-    width: 27%;
-    height: 95vh;
+
+aside,
+section {
+    flex-grow: 1;
+    height: 30vh; /* Equal height for both sections on smaller screens */
+    margin: 5px; /* Space between sections */
 }
-section{
-    float: left;
-    width: 40%;
-    height: 95vh;
-    margin-left: 5px;
-    margin-right: 5px;
+
+/* Media query for smaller devices */
+@media only screen and (max-width: 600px) {
+    aside,
+    section {
+        width: 90%; /* Full width on smaller screens */
+        margin: 5px auto; /* Center and remove horizontal margin, keep vertical margin */
+        height: 15vh;
+    }
+    nav, header, footer{
+        height: 15vh;
+    }
 }
